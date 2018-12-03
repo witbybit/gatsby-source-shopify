@@ -21,35 +21,37 @@ npm install --save gatsby-source-shopify2
 
 ```js
 // In your gatsby-config.js
-plugins: [
-  /*
-   * Gatsby's data processing layer begins with “source”
-   * plugins. Here the site sources its data from Shopify.
-   */
-  {
-    resolve: 'gatsby-source-shopify2',
-    options: {
-      // The domain name of your Shopify shop. This is required.
-      // Example: 'gatsby-source-shopify-test-shop' if your Shopify address is
-      // 'gatsby-source-shopify-test-shop.myshopify.com'.
-      shopName: 'gatsby-source-shopify-test-shop',
+module.exports = {
+  plugins: [
+    /*
+     * Gatsby's data processing layer begins with “source”
+     * plugins. Here the site sources its data from Shopify.
+     */
+    {
+      resolve: 'gatsby-source-shopify2',
+      options: {
+        // The domain name of your Shopify shop. This is required.
+        // Example: 'gatsby-source-shopify-test-shop' if your Shopify address is
+        // 'gatsby-source-shopify-test-shop.myshopify.com'.
+        shopName: 'gatsby-source-shopify-test-shop',
 
-      // An API access token to your Shopify shop. This is required.
-      // You can generate an access token in the "Manage private apps" section
-      // of your shop's Apps settings. In the Storefront API section, be sure
-      // to select "Allow this app to access your storefront data using the
-      // Storefront API".
-      // See: https://help.shopify.com/api/custom-storefronts/storefront-api/getting-started#authentication
-      accessToken: 'example-wou7evoh0eexuf6chooz2jai2qui9pae4tieph1sei4deiboj',
+        // An API access token to your Shopify shop. This is required.
+        // You can generate an access token in the "Manage private apps" section
+        // of your shop's Apps settings. In the Storefront API section, be sure
+        // to select "Allow this app to access your storefront data using the
+        // Storefront API".
+        // See: https://help.shopify.com/api/custom-storefronts/storefront-api/getting-started#authentication
+        accessToken: 'example-wou7evoh0eexuf6chooz2jai2qui9pae4tieph1sei4deiboj',
 
-      // Set verbose to true to display a verbose output on `npm run develop`
-      // or `npm run build`. This prints which nodes are being fetched and how
-      // much time was required to fetch and process the data.
-      // Defaults to true.
-      verbose: true,
+        // Set verbose to true to display a verbose output on `npm run develop`
+        // or `npm run build`. This prints which nodes are being fetched and how
+        // much time was required to fetch and process the data.
+        // Defaults to true.
+        verbose: true,
+      },
     },
-  },
-]
+  ]
+}
 ```
 
 ## How to query
